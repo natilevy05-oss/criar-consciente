@@ -547,7 +547,8 @@ details.faq-item p{
   display: block;
 }
 .moment-card input{ position: absolute; opacity: 0; pointer-events: none; }
-.moment-card p{ margin: 0; font-weight: 700; font-size: 15px; }
+.moment-card p{ margin: 0; font-weight: 700; font-size: 15px; display: flex; align-items: center; gap: 9px; }
+.moment-card p svg{ flex: none; }
 .moment-card.selected{ border-color: var(--brand); background: var(--rose); }
 
 /* ---------- Result blocks (generador / quiz) ---------- */
@@ -612,7 +613,11 @@ details.faq-item p{
   font-weight: 500;
   font-size: 16px;
   color: var(--olive);
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
+.moment-intro svg{ flex: none; }
 .moment-intro:first-of-type{ margin-top: 0; }
 .moment-lede{
   position: relative;

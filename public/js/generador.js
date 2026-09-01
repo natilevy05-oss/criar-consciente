@@ -104,7 +104,12 @@ var ROUTINES = {
 };
 
 var AGE_LABELS = { "0-2": "0 a 2 años", "3-5": "3 a 5 años", "6-10": "6 a 10+ años" };
-var CHALLENGE_LABELS = { manana: "🌅 Mañanas", comidas: "🍽️ Comidas", sueno: "🌙 Hora de dormir" };
+var CHALLENGE_LABELS = { manana: "Mañanas", comidas: "Comidas", sueno: "Hora de dormir" };
+var CHALLENGE_ICONS = {
+  manana: '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="11" r="4.2" stroke="#C98B8B" stroke-width="1.3"/><path d="M10 2.5v2.3M3.8 6.3l1.6 1.6M16.2 6.3l-1.6 1.6M2 13h2.3M15.7 13H18" stroke="#C98B8B" stroke-width="1.3" stroke-linecap="round"/></svg>',
+  comidas: '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 2v5.2a1.6 1.6 0 0 0 3.2 0V2M6.6 7.2V18" stroke="#C98B8B" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M14.5 2c0 3.2-1.6 4.2-1.6 4.2V18M14.5 2v5.6" stroke="#C98B8B" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  sueno: '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M16.5 12.2A7 7 0 1 1 7.8 3.5a5.8 5.8 0 0 0 8.7 8.7Z" stroke="#C98B8B" stroke-width="1.3" stroke-linejoin="round"/></svg>'
+};
 var RANGE_NOTE = "Estos rangos son una guía aproximada, no un corte exacto. Cada niño y niña tiene sus propios tiempos de desarrollo, y eso hay que respetarlo siempre. En Montessori, por ejemplo, se suele hablar de otra división (0-3 / 3-6 / 6-10+), ligada a los planos del desarrollo. Si tu hijo/a está en una edad “bisagra” — como los 2 o los 5 años — probá generar la rutina del rango anterior y la del siguiente, y quedate con la que más se ajuste a su momento actual.";
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -158,7 +163,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var n = 0;
     challenges.forEach(function (ch) {
       var block = ROUTINES[ageKey][ch];
-      html += '<p class="moment-intro">' + CHALLENGE_LABELS[ch] + '</p>';
+      html += '<p class="moment-intro">' + CHALLENGE_ICONS[ch] + ' ' + CHALLENGE_LABELS[ch] + '</p>';
       html += '<p class="moment-lede">' + block.intro + '</p>';
       block.steps.forEach(function (step) {
         n += 1;

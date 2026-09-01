@@ -13,13 +13,13 @@
   <nav class="nav-bar" aria-label="Navegación principal">
     <a class="logo" href="/">
       <svg class="logo-mark" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <circle cx="13" cy="13" r="12" stroke="#6E7E58" stroke-width="1.6"/>
-        <path d="M8 15c1.5-4 3-6 5-6s3.5 2 5 6" stroke="#BC7A4C" stroke-width="1.6" stroke-linecap="round"/>
+        <circle cx="13" cy="13" r="12" stroke="#8A8F6B" stroke-width="1.3"/>
+        <path d="M8 15c1.5-4 3-6 5-6s3.5 2 5 6" stroke="#C4A265" stroke-width="1.3" stroke-linecap="round"/>
       </svg>
       Criar Consciente
     </a>
     <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
-      <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M2 5h18M2 11h18M2 17h18" stroke="#2E2A22" stroke-width="2" stroke-linecap="round"/></svg>
+      <svg width="20" height="20" viewBox="0 0 22 22" fill="none"><path d="M2 5h18M2 11h18M2 17h18" stroke="#4A3B33" stroke-width="1.6" stroke-linecap="round"/></svg>
     </button>
     <ul class="nav-shelf">
       <li><a href="/">Crianza con sentido</a></li>
@@ -31,40 +31,40 @@
       <li><a href="/app.html">La app</a></li>
     </ul>
     <div class="nav-cta">
-      <a class="btn btn-clay btn-sm" href="https://www.etsy.com/shop/PeacefulKidsLab" target="_blank" rel="noopener">Ver tienda Etsy</a>
+      <a class="btn btn-brand btn-sm" href="https://www.etsy.com/shop/PeacefulKidsLab" target="_blank" rel="noopener">Ver tienda Etsy</a>
     </div>
   </nav>
 </header>
 
 <main>
   <section class="section">
-    <div class="container section-narrow">
+    <div class="container-narrow">
       <p class="eyebrow">Herramienta interactiva</p>
       <h1>Generador de rutinas</h1>
-      <p class="hero-lede">Elegí la edad de tu peque y el momento del día que más te está costando. En segundos te armamos una rutina de muestra, con la mirada Montessori de siempre: anticipación, autonomía real y calma.</p>
+      <p class="hero-lede" style="margin-bottom:32px;">Elegí la edad de tu peque y el momento del día que más te está costando. En segundos te armamos una rutina de muestra, con la mirada Montessori de siempre: anticipación, autonomía real y calma.</p>
 
-      <form id="routine-form" class="tool-panel" style="margin-top:28px;">
+      <form id="routine-form" class="tool-panel">
         <h2>1. ¿Qué edad tiene tu peque?</h2>
-        <div class="option-list" role="radiogroup" aria-label="Edad">
-          <label class="option-card"><input type="radio" name="edad" value="0-2" required> 0 a 2 años</label>
-          <label class="option-card"><input type="radio" name="edad" value="3-5"> 3 a 5 años</label>
-          <label class="option-card"><input type="radio" name="edad" value="6-10"> 6 a 10+ años</label>
+        <div class="age-chips" role="radiogroup" aria-label="Edad">
+          <label class="age-chip"><input type="radio" name="edad" value="0-2"> 0 a 2 años</label>
+          <label class="age-chip"><input type="radio" name="edad" value="3-5" checked> 3 a 5 años</label>
+          <label class="age-chip"><input type="radio" name="edad" value="6-10"> 6 a 10+ años</label>
         </div>
 
         <h2 style="margin-top:30px;">2. ¿Qué momento del día querés ordenar?</h2>
-        <p class="field-hint" style="margin-bottom:12px;">Podés elegir más de uno.</p>
-        <div class="option-list">
-          <label class="option-card"><input type="checkbox" name="desafio" value="manana"> 🌅 Mañanas</label>
-          <label class="option-card"><input type="checkbox" name="desafio" value="comidas"> 🍽️ Comidas</label>
-          <label class="option-card"><input type="checkbox" name="desafio" value="sueno"> 🌙 Hora de dormir</label>
+        <p class="field-hint" style="margin:-6px 0 14px;">Podés elegir más de uno.</p>
+        <div class="moment-grid">
+          <label class="moment-card"><input type="checkbox" name="desafio" value="manana" checked><p>🌅 Mañanas</p></label>
+          <label class="moment-card"><input type="checkbox" name="desafio" value="comidas"><p>🍽️ Comidas</p></label>
+          <label class="moment-card"><input type="checkbox" name="desafio" value="sueno"><p>🌙 Hora de dormir</p></label>
         </div>
 
-        <button type="submit" class="btn btn-clay" style="margin-top:26px;">Generar mi rutina de muestra</button>
+        <button type="submit" class="btn btn-brand" style="margin-top:26px;">Generar mi rutina de muestra</button>
       </form>
 
-      <div id="routine-result" style="margin-top:30px;"></div>
+      <div id="routine-result"></div>
 
-      <div class="note-box" style="margin-top:40px;">
+      <div class="note-box">
         Esta herramienta genera una rutina de muestra a partir de combinaciones fijas (edad × desafío), no una recomendación personalizada en tiempo real. Para algo más a medida de tu casa, los recursos completos están en la tienda.
       </div>
     </div>
@@ -72,23 +72,25 @@
 </main>
 
 <footer class="site-footer">
-  <div class="container footer-grid">
+  <div class="footer-grid">
     <div>
-      <p style="font-family:var(--font-display);font-weight:600;color:var(--sage-dark);font-size:1.1rem;margin-bottom:6px;">Criar Consciente</p>
-      <p style="margin:0;">© Natalia Levy</p>
+      <p class="footer-brand">Criar Consciente</p>
+      <p class="footer-copy">© Lic. Natalia Levy</p>
     </div>
     <ul class="footer-links">
       <li><a href="/sobre-mi.html">Sobre mí</a></li>
       <li><a href="/faq.html">FAQ</a></li>
       <li><a href="/generador.html">Generador de rutinas</a></li>
       <li><a href="/quiz.html">Quiz</a></li>
-      <li><a href="https://www.etsy.com/shop/PeacefulKidsLab" target="_blank" rel="noopener">Tienda Etsy</a></li>
+      <li><a href="/blog.html">Blog</a></li>
+      <li><a href="/app.html">La app</a></li>
+      <li><a class="footer-etsy" href="https://www.etsy.com/shop/PeacefulKidsLab" target="_blank" rel="noopener">Tienda Etsy</a></li>
     </ul>
   </div>
 </footer>
 
 <a class="wa-float" href="https://wa.me/5491160031972" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
-  <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 5L2 22l5.2-1.3c1.5.8 3.1 1.3 4.8 1.3 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18c-1.6 0-3-.5-4.3-1.3l-.3-.2-3.1.8.8-3-.2-.3C4.5 14.7 4 13.4 4 12c0-4.4 3.6-8 8-8s8 3.6 8 8-3.6 8-8 8zm4.4-6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.6.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1-.2-.1-1-.4-2-1.2-.7-.6-1.2-1.4-1.4-1.6-.1-.2 0-.4.1-.5.1-.1.3-.3.4-.5.1-.1.2-.3.2-.5.1-.2 0-.3 0-.5-.1-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.2-.9.9-.9 2.2s1 2.5 1.1 2.7c.1.2 2 3 4.7 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.4-.6 1.6-1.1.2-.5.2-1 .1-1.1-.1-.1-.3-.2-.5-.3z"/></svg>
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="#FDFBF8"><path d="M12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 5L2 22l5.2-1.3c1.5.8 3.1 1.3 4.8 1.3 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18c-1.6 0-3-.5-4.3-1.3l-.3-.2-3.1.8.8-3-.2-.3C4.5 14.7 4 13.4 4 12c0-4.4 3.6-8 8-8s8 3.6 8 8-3.6 8-8 8zm4.4-6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.6.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1-.2-.1-1-.4-2-1.2-.7-.6-1.2-1.4-1.4-1.6-.1-.2 0-.4.1-.5.1-.1.3-.3.4-.5.1-.1.2-.3.2-.5.1-.2 0-.3 0-.5-.1-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.2-.9.9-.9 2.2s1 2.5 1.1 2.7c.1.2 2 3 4.7 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.4-.6 1.6-1.1.2-.5.2-1 .1-1.1-.1-.1-.3-.2-.5-.3z"/></svg>
 </a>
 
 <script src="/js/nav.js"></script>

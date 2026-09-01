@@ -10,7 +10,7 @@ var ROUTINES = {
       intro: "A esta edad el adulto guía casi todo, pero ya podés sumar pequeñas elecciones para que tu hijo/a empiece a sentirse parte de su propia mañana.",
       steps: [
         { title: "Despertar con calma", text: "Nada de apuro desde el primer minuto. Un rato de upa o de luz natural antes de arrancar hace diferencia." },
-        { title: "Elegir entre 2 opciones", text: "\u201c¿remera roja o azul?\u201d ya es autonomía real, aunque parezca chiquito." },
+        { title: "Elegir entre 2 opciones", text: "“¿remera roja o azul?” ya es autonomía real, aunque parezca chiquito." },
         { title: "Vestirse con ayuda mínima", text: "Dejalo/a intentar meter el brazo o la pierna solo/a, aunque tarde más. Ahí se juega tu paciencia." },
         { title: "Desayuno sensorial y sin apuro", text: "Que pueda tocar, ensuciarse, probar con su propia cuchara." },
         { title: "Despedida con ritual fijo", text: "Un gesto que se repita siempre (un beso, chocar las manos, una frase corta) ayuda a anticipar la separación." }
@@ -20,10 +20,10 @@ var ROUTINES = {
       intro: "A esta edad comer es, ante todo, explorar. El desorden y el ritmo lento son parte esperable del proceso, no algo para corregir.",
       steps: [
         { title: "Sentarse siempre en el mismo lugar", text: "Una sillita a su altura ayuda a anticipar que llegó el momento de comer." },
-        { title: "Elegir entre 2 opciones simples", text: "\u201c¿banana o manzana?\u201d ya es una decisión real, aunque parezca chica." },
+        { title: "Elegir entre 2 opciones simples", text: "“¿banana o manzana?” ya es una decisión real, aunque parezca chica." },
         { title: "Explorar con las manos y los sentidos", text: "Tocar, aplastar, ensuciarse es parte de aprender a comer, no un problema." },
         { title: "Comer a su propio ritmo", text: "Sin apurar ni completar por él/ella; respetar cuándo abre la boca y cuándo la cierra." },
-        { title: "Reconocer que terminó", text: "Un gesto o palabra simple (\u201clisto\u201d) que vos validás, sin insistir en que coma un poco más." }
+        { title: "Reconocer que terminó", text: "Un gesto o palabra simple (“listo”) que vos validás, sin insistir en que coma un poco más." }
       ]
     },
     sueno: {
@@ -55,17 +55,17 @@ var ROUTINES = {
         { title: "Servirse su porción", text: "Con una jarra o cucharón chico, aunque al principio derrame." },
         { title: "Elegir entre 2 opciones ya preparadas", text: "Sostiene la autonomía sin convertir la comida en negociación abierta." },
         { title: "Comer sin pantallas ni distracciones", text: "Un momento tranquilo, acompañado, sin apuro." },
-        { title: "Reconocer su propia saciedad", text: "Puede decir \u201cno quiero más\u201d sin que eso sea motivo de conflicto." }
+        { title: "Reconocer su propia saciedad", text: "Puede decir “no quiero más” sin que eso sea motivo de conflicto." }
       ]
     },
     sueno: {
       intro: "Ya puede anticipar los pasos con una secuencia visual, aunque sigue necesitando presencia cercana del adulto durante el ritual.",
       steps: [
         { title: "Mirar la secuencia visual", text: "Baño → piyama → cuento → luz apagada, siempre en el mismo orden." },
-        { title: "Elegir entre 2 opciones", text: "\u201c¿este piyama o este otro?\u201d, \u201c¿este cuento o este otro?\u201d — autonomía dentro de un marco fijo." },
+        { title: "Elegir entre 2 opciones", text: "“¿este piyama o este otro?”, “¿este cuento o este otro?” — autonomía dentro de un marco fijo." },
         { title: "Cuento con acompañamiento sostenido", text: "Quedarte cerca o sentado/a durante la lectura, no solo dar la instrucción desde la puerta." },
         { title: "Luz tenue y ambiente tranquilo", text: "Bajar estímulos antes de apagar la luz, no de golpe." },
-        { title: "Despedida con ritual fijo", text: "Corta, cálida y siempre igual, sin el \u201cuna vez más\u201d que alarga la transición. Transmitile que vas a estar cerca y que podés acudir si te necesita: a esta edad puede aparecer el miedo a dormir solo/a." }
+        { title: "Despedida con ritual fijo", text: "Corta, cálida y siempre igual, sin el “una vez más” que alarga la transición. Transmitile que vas a estar cerca y que podés acudir si te necesita: a esta edad puede aparecer el miedo a dormir solo/a." }
       ]
     }
   },
@@ -85,7 +85,7 @@ var ROUTINES = {
       steps: [
         { title: "Colaborar en preparar parte de la comida", text: "Cortar con cuchillo de niño/a, armar una ensalada, ayudar a cocinar algo simple." },
         { title: "Servirse solo/a de la fuente o la olla", text: "Con supervisión cercana, pero sin intervención directa." },
-        { title: "Poner y levantar su lugar en la mesa", text: "Parte natural de comer, no una \u201ctarea extra\u201d." },
+        { title: "Poner y levantar su lugar en la mesa", text: "Parte natural de comer, no una “tarea extra”." },
         { title: "Comer en un ambiente tranquilo y compartido", text: "Sin pantallas, con charla familiar como parte del momento." },
         { title: "Entender de dónde viene la comida", text: "Si se da, sumar alguna noción simple (huerta, mercado, estación del año) como curiosidad, no como clase." }
       ]
@@ -105,11 +105,36 @@ var ROUTINES = {
 
 var AGE_LABELS = { "0-2": "0 a 2 años", "3-5": "3 a 5 años", "6-10": "6 a 10+ años" };
 var CHALLENGE_LABELS = { manana: "🌅 Mañanas", comidas: "🍽️ Comidas", sueno: "🌙 Hora de dormir" };
+var RANGE_NOTE = "Estos rangos son una guía aproximada, no un corte exacto. Cada niño y niña tiene sus propios tiempos de desarrollo, y eso hay que respetarlo siempre. En Montessori, por ejemplo, se suele hablar de otra división (0-3 / 3-6 / 6-10+), ligada a los planos del desarrollo. Si tu hijo/a está en una edad “bisagra” — como los 2 o los 5 años — probá generar la rutina del rango anterior y la del siguiente, y quedate con la que más se ajuste a su momento actual.";
 
 document.addEventListener("DOMContentLoaded", function () {
   var form = document.getElementById("routine-form");
   var resultEl = document.getElementById("routine-result");
   if (!form) return;
+
+  var ageChips = Array.prototype.slice.call(form.querySelectorAll(".age-chip"));
+  var momentCards = Array.prototype.slice.call(form.querySelectorAll(".moment-card"));
+
+  function syncSelectedClasses() {
+    ageChips.forEach(function (chip) {
+      chip.classList.toggle("selected", chip.querySelector("input").checked);
+    });
+    momentCards.forEach(function (card) {
+      card.classList.toggle("selected", card.querySelector("input").checked);
+    });
+  }
+  syncSelectedClasses();
+
+  function clearResult() {
+    resultEl.innerHTML = "";
+  }
+
+  ageChips.concat(momentCards).forEach(function (el) {
+    el.querySelector("input").addEventListener("change", function () {
+      syncSelectedClasses();
+      clearResult();
+    });
+  });
 
   form.addEventListener("submit", function (e) {
     e.preventDefault();
@@ -119,51 +144,59 @@ document.addEventListener("DOMContentLoaded", function () {
       .call(form.querySelectorAll('input[name="desafio"]:checked'))
       .map(function (el) { return el.value; });
 
-    if (!age) {
-      resultEl.innerHTML = '<div class="msg msg-error">Elegí primero la edad de tu peque.</div>';
-      resultEl.scrollIntoView({ behavior: "smooth", block: "start" });
-      return;
-    }
-    if (challenges.length === 0) {
-      resultEl.innerHTML = '<div class="msg msg-error">Elegí al menos un desafío para generar la rutina.</div>';
-      resultEl.scrollIntoView({ behavior: "smooth", block: "start" });
-      return;
-    }
+    if (challenges.length === 0) { challenges = ["manana"]; }
 
     var ageKey = age.value;
-    var html = '<div class="note-box">Estos rangos son una guía aproximada, no un corte exacto. Si tu hijo/a está en una edad "bisagra" — como los 2 o los 5 años — probá también con el rango siguiente o anterior, y quedate con el que más se ajuste a su momento actual.</div>';
+    var tagLabel = AGE_LABELS[ageKey] + " · " + challenges.map(function (ch) { return CHALLENGE_LABELS[ch]; }).join(" + ");
 
+    var html = '<div class="result-block">';
+    html += '<div class="blob blob-rose-corner" aria-hidden="true"></div>';
+    html += '<span class="result-tag">' + tagLabel + '</span>';
+    html += '<h2>Tu rutina de muestra</h2>';
+    html += '<div class="note-box" style="position:relative;z-index:1;margin:0 0 20px;">' + RANGE_NOTE + '</div>';
+
+    var n = 0;
     challenges.forEach(function (ch) {
       var block = ROUTINES[ageKey][ch];
-      html += '<div class="tool-panel" style="margin-bottom:24px;">';
-      html += '<span class="result-tag">' + CHALLENGE_LABELS[ch] + ' · ' + AGE_LABELS[ageKey] + '</span>';
-      html += '<p style="font-style:italic;color:var(--ink-soft);">' + block.intro + '</p>';
-      block.steps.forEach(function (step, i) {
+      html += '<p class="moment-intro">' + CHALLENGE_LABELS[ch] + '</p>';
+      html += '<p class="moment-lede">' + block.intro + '</p>';
+      block.steps.forEach(function (step) {
+        n += 1;
         html += '<div class="step-row">' +
-          '<span class="step-badge">' + (i + 1) + '</span>' +
+          '<span class="step-badge">' + n + '</span>' +
           '<div><p class="step-title">' + step.title + '</p><p class="step-text">' + step.text + '</p></div>' +
           '</div>';
       });
-      html += '</div>';
     });
 
-    html += '<div class="tool-panel" style="text-align:center;background:var(--paper-2);border:none;">' +
-      '<p style="margin-bottom:18px;">Esto es una muestra pensada para orientarte. Si querés una rutina completa, imprimible y lista para pegar en la pared de tu casa — con tarjetas visuales y checklist — la tenés en la tienda.</p>' +
-      '<a class="btn btn-clay" href="https://www.etsy.com/shop/PeacefulKidsLab" target="_blank" rel="noopener">Ver recursos en Etsy →</a>' +
+    html += '<p class="result-note">Podés adaptarla a tu rutina.</p>';
+    html += '<div class="result-actions">' +
+      '<a class="btn btn-olive" href="https://www.etsy.com/shop/PeacefulKidsLab" target="_blank" rel="noopener">Ver tu recurso personalizado en Etsy</a>' +
+      '<button type="button" class="btn btn-outline-olive" id="routine-reset">Probar con otra edad</button>' +
       '</div>';
 
-    html += '<div class="card" style="margin-top:20px;">' +
-      '<p style="margin-bottom:14px;"><strong>¿Querés recibir más recursos gratis como este?</strong> Dejá tu mail y te vamos avisando sobre nuevas guías y novedades de Criar Consciente.</p>' +
+    html += '<div class="email-card">' +
+      '<p><strong>¿Querés recibir más recursos gratis como este?</strong> Dejá tu mail y te vamos avisando sobre nuevas guías y novedades de Criar Consciente.</p>' +
       '<form id="routine-email-form">' +
       '<div class="field"><label for="routine-email" class="visually-hidden">Tu email</label>' +
       '<input type="email" id="routine-email" name="email" placeholder="tu@email.com" required></div>' +
-      '<button type="submit" class="btn btn-sage">Quiero recibir más recursos gratis</button>' +
+      '<button type="submit" class="btn btn-olive">Quiero recibir más recursos gratis</button>' +
       '<p class="field-hint">Usamos tu mail solo para esto — nunca lo compartimos con terceros.</p>' +
       '<div id="routine-email-msg"></div>' +
       '</form></div>';
 
+    html += '</div>';
+
     resultEl.innerHTML = html;
     resultEl.scrollIntoView({ behavior: "smooth", block: "start" });
+
+    var resetBtn = document.getElementById("routine-reset");
+    if (resetBtn) {
+      resetBtn.addEventListener("click", function () {
+        clearResult();
+        form.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    }
 
     var emailForm = document.getElementById("routine-email-form");
     if (emailForm) {

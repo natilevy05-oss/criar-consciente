@@ -52,13 +52,13 @@ var PROFILES = {
   },
   limites_conexion: {
     tag: "Límites con conexión",
-    text: "Buscás poner límites sin perder la calidez — y se puede. Un berrinche no es un \u201cmal comportamiento\u201d a corregir, es una emoción que todavía no sabe cómo salir. Vos podés sostener el límite y acompañar la emoción al mismo tiempo.",
+    text: "Buscás poner límites sin perder la calidez — y se puede. Un berrinche no es un “mal comportamiento” a corregir, es una emoción que todavía no sabe cómo salir. Vos podés sostener el límite y acompañar la emoción al mismo tiempo.",
     recurso: "Guía de límites y berrinches",
     publicado: false
   },
   estructura_grandes: {
     tag: "Estructura para grandes desafíos",
-    text: "Cuando los límites cuestan, muchas veces ayuda más una rutina clara que una charla larga. Saber qué se espera en cada momento del día reduce la cantidad de veces que hay que \u201cpelear\u201d por lo mismo.",
+    text: "Cuando los límites cuestan, muchas veces ayuda más una rutina clara que una charla larga. Saber qué se espera en cada momento del día reduce la cantidad de veces que hay que “pelear” por lo mismo.",
     recurso: "Set de rutinas + límites",
     publicado: false
   },
@@ -89,16 +89,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function renderQuestion(index) {
     var q = QUIZ_QUESTIONS[index];
+    var pct = Math.round((index / QUIZ_QUESTIONS.length) * 100) + "%";
+
     var html = '<div class="tool-panel">';
-    html += '<p class="eyebrow">Pregunta ' + (index + 1) + ' de ' + QUIZ_QUESTIONS.length + '</p>';
+    html += '<div class="quiz-progress">' +
+      '<div class="quiz-progress-rail"><div class="quiz-progress-fill" style="width:' + pct + ';"></div></div>' +
+      '<span class="quiz-progress-count">' + (index + 1) + ' de ' + QUIZ_QUESTIONS.length + '</span>' +
+      '</div>';
     html += '<h2>' + q.q + '</h2>';
     html += '<div class="option-list" role="radiogroup" aria-label="' + q.q + '">';
     q.options.forEach(function (opt, i) {
       html += '<label class="option-card" for="opt-' + index + '-' + i + '">' +
-        '<input type="radio" name="q-' + index + '" id="opt-' + index + '-' + i + '" value="' + opt.value + '"> ' +
-        opt.label + '</label>';
+        '<input type="radio" name="q-' + index + '" id="opt-' + index + '-' + i + '" value="' + opt.value + '">' +
+        '<span class="option-radio-dot" aria-hidden="true"></span>' + opt.label + '</label>';
     });
-    html += '</div></div>';
+    html += '</div>';
+    if (index > 0) {
+      html += '<div class="quiz-back-row"><button type="button" class="quiz-back" id="quiz-back">← Atrás</button></div>';
+    }
+    html += '</div>';
     quizRoot.innerHTML = html;
 
     var inputs = quizRoot.querySelectorAll('input[type="radio"]');
@@ -117,38 +126,51 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 220);
       });
     });
+
+    var backBtn = document.getElementById("quiz-back");
+    if (backBtn) {
+      backBtn.addEventListener("click", function () {
+        currentStep = Math.max(0, index - 1);
+        renderQuestion(currentStep);
+      });
+    }
   }
 
   function renderResult() {
     var profileKey = resolveProfile(answers.desafio, answers.estilo);
     var profile = PROFILES[profileKey];
-    var ageLabel = { "0-2": "0 a 2 años", "3-5": "3 a 5 años", "6-10": "6 a 10+ años" }[answers.edad] || "";
 
-    var html = '<div class="tool-panel">';
-    html += '<span class="result-tag">Tu resultado</span>';
+    var html = '<div class="result-block">';
+    html += '<div class="blob blob-rose-corner" aria-hidden="true"></div>';
+    html += '<span class="result-tag">' + profile.tag + '</span>';
     html += '<h2>' + profile.tag + '</h2>';
     html += '<p>' + profile.text + '</p>';
 
     if (profile.publicado) {
       html += '<p><strong>Te puede servir: ' + profile.recurso + '</strong> — ' + profile.recursoTexto + '</p>';
-      html += '<a class="btn btn-clay" href="' + ETSY_URL + '" target="_blank" rel="noopener">Mirá lo que ya tenés disponible →</a>';
+      html += '<div class="result-actions">' +
+        '<a class="btn btn-brand" href="' + ETSY_URL + '" target="_blank" rel="noopener">Mirá lo que ya tenés disponible →</a>' +
+        '<a class="btn btn-outline-olive" href="/generador.html">Ir al generador</a>' +
+        '<button type="button" class="btn btn-text" id="quiz-restart">Volver a hacer el quiz</button>' +
+        '</div>';
     } else {
       html += '<p><strong>Te puede servir: ' + profile.recurso + '</strong> — muy pronto vas a encontrarlo/a en la tienda.</p>';
-      html += '<div style="display:flex;gap:12px;flex-wrap:wrap;margin:16px 0 22px;">' +
-        '<a class="btn btn-clay" href="' + ETSY_URL + '" target="_blank" rel="noopener">Mirá lo que ya tenés disponible →</a>' +
+      html += '<div class="result-actions">' +
+        '<a class="btn btn-brand" href="' + ETSY_URL + '" target="_blank" rel="noopener">Mirá lo que ya tenés disponible →</a>' +
+        '<a class="btn btn-outline-olive" href="/generador.html">Ir al generador</a>' +
         '</div>';
-      html += '<div class="card" style="background:var(--paper-2);border:none;">' +
-        '<p style="margin-bottom:14px;"><strong>¿Querés que te avisemos apenas esté listo?</strong> Dejá tu mail y te escribimos ni bien publiquemos "' + profile.recurso + '".</p>' +
+      html += '<div class="email-card">' +
+        '<p><strong>¿Querés que te avisemos apenas esté listo?</strong> Dejá tu mail y te escribimos ni bien publiquemos "' + profile.recurso + '".</p>' +
         '<form id="quiz-email-form" data-profile="' + profileKey + '" data-recurso="' + profile.recurso + '">' +
         '<div class="field"><label for="quiz-email" class="visually-hidden">Tu email</label>' +
         '<input type="email" id="quiz-email" name="email" placeholder="tu@email.com" required></div>' +
-        '<button type="submit" class="btn btn-sage">Avisame cuando esté listo</button>' +
+        '<button type="submit" class="btn btn-olive">Avisame cuando esté listo</button>' +
         '<p class="field-hint">Usamos tu mail solo para avisarte sobre este recurso y novedades de Criar Consciente — nunca lo compartimos con terceros.</p>' +
         '<div id="quiz-email-msg"></div>' +
         '</form></div>';
+      html += '<div class="result-actions"><button type="button" class="btn btn-text" id="quiz-restart">Volver a hacer el quiz</button></div>';
     }
 
-    html += '<div style="margin-top:22px;"><button class="btn btn-outline btn-sm" id="quiz-restart" type="button">Volver a hacer el quiz</button></div>';
     html += '</div>';
     quizRoot.innerHTML = html;
 

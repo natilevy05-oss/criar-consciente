@@ -272,6 +272,8 @@ summary:focus-visible{
 
 .btn-sm{ padding: 10px 18px; font-size: 13.5px; }
 
+.brand-mark{ font-size: 0.4em; vertical-align: super; margin-left: 0.15em; font-weight: 400; }
+
 .nav-etsy-btn{ line-height: 1.35; text-align: center; }
 
 /* ---------- Hero (home) ---------- */
